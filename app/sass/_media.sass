@@ -1,0 +1,462 @@
+@import "bourbon"
+@import "vars"
+
+// /* Large Devices, Wide Screens */
+@media only screen and (max-width : 768px)
+	.main .wrap-menu.collapsed ul.menu li.active a:after
+		height: 0.9vw
+	body
+		padding-top: 0
+		background-image: url("../img/background/background.png")
+		background-position: center 0
+		background-size: contain
+	section
+		height: auto
+		min-height: auto
+	.main
+		padding: 5vw 0
+		min-height: 100vh
+		h1
+			font-size: 22vw
+			line-height: 18vw
+			span
+				font-size: 11vw
+		.name
+			font-size: 5.8vw
+			margin: 4vh 0;
+		.desc
+			font-size: 5.2vw
+			margin-top: 0
+		.burger
+			opacity: 1
+			right: 5vw
+			top: 0
+		.top
+			background-image: linear-gradient(to bottom, rgba(5, 8, 35, 0.7), rgba(5, 8, 35, 0.4), rgba(5, 8, 35, 0));
+			top: 0
+			left: 0
+			line-height: 20vw
+			.logo svg
+				width: 12vw
+		.top .logo span
+			font-size: 6vw
+			margin-left: 3vw
+	.button
+		width: 70vw
+		line-height: 15vw
+		font-size: 6vw
+		border-radius: 8vw
+		border: .8vw solid #fff;
+	.main .wrap-menu.collapsed
+		width: 105vw
+		padding-left: 10vw
+		right: -100vw
+		padding-right: 20vw
+		ul.menu li a
+			font-size: 7vw
+	.main .wrap-menu.collapsed .language img
+		width: 10vw
+		border: 0.5vw solid #fff;
+		border-radius: .8vw;
+	.main .wrap-menu.collapsed .language ul li
+		margin-left: 2vw
+	.more, .more p, .tokens .circle, .tokens h2, .tokens
+		opacity: 1
+		transform: translate3d(0,0,0);
+		padding: 5vh 0
+	.more 
+		min-height: 100vh
+		transform: translate3d(0,0,0)
+		.header
+			font-size: 9vw
+	.more p
+		font-size: 6vw
+	.more .wrap-img img
+		width: 40vw
+		margin-left: 40vw
+	.more .wrap-img .block
+		font-size: 3.5vw
+	.more .wrap-img .block .blue,
+	.more .wrap-img .block .pink
+		font-size: 6vw
+		small
+			font-size: 4vw
+	.more .wrap-img .block.el-1
+		top: -5vw;
+		left: 4vw
+	.more .wrap-img .block.el-2
+		top: 20vw;
+		left: 4vw
+		text-align: left
+	.tokens
+		margin-top: 0
+		overflow: hidden
+		height: 420vw
+		transform: translate3d(0,0,0);
+		h2
+			padding: 0
+		.circle
+			left: -40vw;
+			top: 100vw;
+			width: 180vw;
+		.content
+			.name
+				font-size: 7vw
+			&>div,&>img
+				opacity: 1
+				img
+					width: 20vw
+				&.el-1
+					left: 10vw
+				&.el-2
+					top: 64vw
+					left: 18vw
+					width: 50vw
+					img
+						margin-left: -2vw
+				&.el-3
+					opacity: 1
+					left: 28vw
+					width: 32vw
+					top: 132vw
+					img,.name
+						opacity: 1
+				&.el-4
+					left: 34vw
+					width: 50vw
+					top: 264vw
+				&.el-5
+					left: 0vw
+					width: 50vw
+					top: 332vw
+				&.line1
+					width: 10vw;
+					top: 29.8vw;
+					left: 36vw;
+					opacity: 1
+				&.line2
+					width: 8vw;
+					top: 110vw;
+					left: 39vw;
+					opacity: 1
+				&.line3
+					width: 8vw;
+					top: 182vw;
+					left: 55vw;
+					opacity: 1
+				&.line4
+					width: 11vw;
+					top: 173vw;
+					left: 20vw;
+					opacity: 1
+			.sign
+				font-size: 4vw
+				opacity: 1
+				&.num1
+					width: 35vw
+					left: 48vw
+					top: 27vw
+					&:before
+						display: none
+				&.num2
+					width: 46vw
+					left: 20vw
+					top: 98vw
+					text-align: center
+				&.num4
+					width: 54vw
+					left: 16vw
+					top: 165vw
+					text-align: center
+				&.num3
+					width: 38vw
+					left: 40vw
+					top: 230vw
+					text-align: center
+					&:before
+						width: 18vw
+						height: 20vw
+						left: 10vw
+						top: -20vw
+				&.num5
+					width: 54vw
+					left: 32vw
+					top: 296vw
+					text-align: center
+				&.num6
+					width: 50vw
+					left: 0vw
+					top: 364vw
+					text-align: center
+	.key
+		transform: translate3d(0,0,0)
+		opacity: 1
+		font-size: 3.8vw
+		.el-1,
+		.el-2,
+		.el-3
+			width: 100%
+			margin: 10vw 0
+			top: auto
+			padding-left: 15vw
+			&:before
+				left: 4vw
+				top: -2vw
+				width: 14vw
+				height: 14vw
+		.header
+			font-size: 7vw
+			line-height: 1.4 !important
+		.el-3 ul
+			width: 100%
+	ul.dashes li:before
+		left: -6vw
+	.block
+		padding: 10vw 0
+	h2
+		font-size: 10vw
+		line-height: 1.2
+		margin-left: 5vw
+		text-align: left
+		padding-left: 0 !important
+		&:before
+			top: 6vw;
+			width: 15vw;
+			height: 3vw;
+			left: -8vw
+	.genius
+		.sign, h2, .brain
+			opacity: 1
+		.brain
+			transform: translate3d(0,0,0)
+		.sign
+			font-size: 5.6vw
+		.brain-img
+			width: 60vw;
+			margin-top: 10vw;
+			margin-left: 5vw
+		.brain
+			margin-top: 5vw
+			div
+				opacity: 1
+				position: static
+				font-size: 6vw
+				text-align: left
+				padding-left: 5vw
+				&:after
+					display: none
+				&:before
+					content: '•'
+					margin-right: 2vw
+	.video
+		padding: 10vh 0
+		.line, &:after, &:before
+			display: none
+		iframe
+			height: 50vh
+			width: 100vw
+			margin-left: -4vw
+	.owl-carousel .owl-stage-outer
+		overflow: visible
+	.team
+		padding: 10vw 0
+		overflow: hidden
+		.nav a
+			margin: 0 4vw
+			opacity: 1
+			font-size: 10vw
+			&.active:before
+				bottom: -2vw;
+				height: 1.6vw;
+		.wrap-slider
+			transform: translate3d(0,0,0)
+			opacity: 1
+			margin-top: 10vw
+			.arrow
+				display: none
+			li
+				text-align: center
+				.name
+					font-size: 4.6vw
+				p
+					font-size: 3.8vw
+				.img
+					width: 70%
+					display: inline-block
+					a
+						width: 8vw
+						height: 8vw
+						border-radius: 4vw
+						line-height: 8vw;
+						font-size: 4.2vw
+	.roadmap
+		position: relative
+		h2
+			text-align: center
+		.content
+			display: none
+		.left-line
+			position: absolute
+			top: 1vw
+			bottom: 75vw
+			left: 13vw
+			width: 2px
+			display: block
+			background-image: linear-gradient(to bottom, #00c8ef, #0096c9 24%, #cc41bb 31%, #833076)
+		.map
+			height: auto
+			padding: 0 5vw
+			.tab
+				font-size: 6vw
+				top: 107vw;
+				left: 31vw;
+				font-weight: bold
+				&:after
+					position: absolute;
+					left: -16vw;
+					width: 11vw;
+					height: 16.5vw;
+					transform: rotate(35deg);
+			&:before
+				display: none
+			&>img
+				display: none
+			a
+				opacity: 1
+				padding: 0
+				width: 100%
+				position: relative
+				left: auto !important
+				top: auto !important
+				text-align: left
+				padding-left: 18vw
+				font-size: 5vw
+				margin-top: 8vw
+				&:hover
+					color: #fff !important
+				&.el-1:before
+					content: ''
+					display: block
+					position: absolute
+					width: 12vw
+					height: 12vw
+					border-radius: 50%
+					background-color: #00b9e4
+					left: 2.5vw
+					top: 1vw
+				&.el-1:after
+					content: ''
+					display: block
+					position: absolute
+					background-image: url("../img/others/completed-icon.svg")
+					background-size: cover
+					width: 6.5vw
+					height: 5vw
+					left: 5vw
+					top: 4.2vw
+				&.el-2
+					margin-top: 20vw
+				&.el-2:before
+					content: ''
+					display: block
+					position: absolute
+					width: 8vw
+					height: 8vw
+					border-radius: 50%
+					background-image: linear-gradient(to left, #af4dbd, #5a70c3)
+					left: 4.5vw
+					top: 3vw
+				&.el-3:before,
+				&.el-4:before,
+				&.el-5:before,
+				&.el-6:before
+					content: ''
+					display: block
+					position: absolute
+					width: 6vw
+					height: 6vw
+					border-radius: 50%
+					background-color: #a23793
+					left: 5.5vw
+					top: 3vw
+			p
+				font-size: 4vw
+				opacity: .8
+				padding-left: 18vw
+				text-align: left
+	.tokensale
+		padding-top: 0
+		.el
+			opacity: 1
+			height: auto
+			padding-bottom: 5vh
+			margin-top: 10vw
+			.header
+				font-size: 10vw
+			.content p
+				margin: 2.4vh 2vw
+				font-size: 4.4vw
+			.content p b
+				font-size: 4.4vw
+			center
+				position: static
+			.content .color
+				font-size: 6vw
+				padding-left: 2vw
+		.token
+			.content>div
+				padding-left: 15vw
+				&.cap:before, &.date:before, &.price:before
+					width: 8vw
+					height: 8vw
+					left: 3vw;
+			span
+				font-size: 4.4vw
+			b
+				font-size: 5.6vw
+	.contact
+		margin-top: -10vw
+		padding-bottom: 25vw;
+		height: auto
+		.big-header
+			transform: translate3d(0,0,0);
+			font-size: 10vw
+		.row
+			transform: translate3d(0,0,0);
+			opacity: 1
+		.el
+			img
+				width: 10vw
+			.name
+				font-size: 4vw
+			.bot
+				font-size: 3.4vw;
+		footer
+			font-size: 4vw
+	.pop-up .header
+		font-size: 6.4vw
+	.pop-up .form input
+		width: 80vw
+		height: 16vw
+		font-size: 6vw
+		border-radius: 8vw
+		padding: 0 6vw
+	.pop-up .form button
+		height: 16vw
+		width: 16vw
+		border-radius: 50%
+		position: absolute
+		right: 5vw
+		font-size: 7vw
+	.fancybox-close
+		width: 8vw!important;
+		height: 10vw!important;
+	.team .wrap-slider ul
+		padding: 0 4vw
+		li
+			padding: 0
+
+
+
+
+

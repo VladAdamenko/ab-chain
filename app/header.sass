@@ -1,0 +1,239 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+
+.container-fluid
+	padding: 0 4vw
+
+.main
+	text-align: center
+	padding: 1.8vw 0
+	.burger
+		position: absolute
+		right: 0
+		top: -0.2vw
+		z-index: 10
+		opacity: 0
+		span, 
+		span:before,
+		span:after
+			cursor: pointer;
+			height: 3px;
+			width: 24px;
+			position: relative;
+			display: inline-block;
+			content: '';
+			left: 0
+			background-image: linear-gradient(to left, #fff, #fff)
+			transition: all 500ms ease-in-out, height 1ms ease,  width 0s ease, margin 0s ease
+		span:before
+			top: 9px;
+			position: absolute
+			background: inherit
+		span:after
+			bottom: 9px;
+			position: absolute
+			background: inherit
+	.wrap-menu
+		position: relative
+		&.collapsed
+			right: -30vw
+			top: 0
+			margin: -4vw
+			height: 100vh
+			padding-right: 20vw
+			opacity: 1 !important
+			left: auto !important
+			position: absolute
+			z-index: 10
+			width: 30vw
+			padding: 6vw 5vw
+			background-color: rgba(#050823, .95)
+			@include transition(.5s right)
+			&.opened
+				right: 0
+			ul.menu
+				display: block
+				li
+					display: block
+					width: 100%
+					text-align: left
+					margin: 3.2vh 0
+					line-height: 1.4
+					position: relative
+					&.active a:after
+						content: ''
+						display: block
+						height: .3vw
+						background-color: #fff
+						width: 100%
+						position: absolute
+						left: 0
+					a
+						font-size: 2.2vw
+						font-weight: normal
+						text-transform: none
+						@include transition(.3s background)
+						&[href^='#']:hover
+							-webkit-background-clip: text
+							background-clip: text
+							-webkit-text-fill-color: transparent
+						&[href="#more"]:hover
+							background-image: linear-gradient(to left, #ffc2e6, #b73475)
+						&[href="#tokens"]
+							&:hover,
+							&:after
+								background-image: linear-gradient(to left, #cc41bb, #833076)
+						&[href="#genius"]
+							&:hover,
+							&:after
+								background-image: linear-gradient(to left, #f9fade, #ffd072)
+						&[href="#team"]
+							&:hover,
+							&:after
+								background-image: linear-gradient(to left, #00d1f5, #0d508e)
+						&[href="#roadmap"]
+							&:hover,
+							&:after
+								background-image: linear-gradient(to left, #cc41bb, #833076)
+						&[href="#tokensale"]
+							&:hover,
+							&:after
+								background-image: linear-gradient(to left, #f9fade, #ffd072)
+						&[href="#contacts"]
+							&:hover
+								background-image: linear-gradient(to left, #ffc2e6, #b73475)
+						&.network
+							font-weight: 900
+			.language
+				position: static
+				display: block
+				margin: 0
+				padding: 0
+				border-radius: 0 !important
+				overflow: visible
+				cursor: default
+				@include transition(none)
+				&.active
+					height: auto
+					margin: 0
+					border: none
+				img
+					width: 3vw
+					height: auto
+					border-radius: .3vw
+				& > img
+					border: .15vw solid #fff
+				i
+					display: none
+				ul
+					display: inline-block
+					visibility: visible
+					li
+						display: inline-block
+						margin-left: 1vw
+		&.opened+.burger
+			span
+				height: 3px
+				width: 0
+				margin-right: 24px
+			span:before,
+			span:after
+				top: 0;
+			span:before 
+				transform: rotate(45deg);
+			span:after 
+				transform: rotate(-45deg);
+	.top
+		line-height: 5vw
+		position: fixed
+		left: 0
+		right: 0
+		padding: 0 4vw
+		z-index: 5
+		.wrap-menu
+		.logo
+			color: #fff
+			display: inline-block
+			white-space: nowrap
+			span
+				font-size: 2vw
+				display: inline-block
+				font-weight: 900
+				letter-spacing: .2vw
+				vertical-align: middle
+				margin-left: 1vw
+			svg
+				vertical-align: middle
+				width: 4vw
+				height: auto
+		.menu
+			display: inline-block
+			vertical-align: middle
+			li
+				display: inline-block
+				margin: 0 1vw
+				a
+					font-size: 1.2vw
+					font-weight: 500
+					color: #fff
+					text-transform: uppercase
+		.language
+			display: inline-block
+			vertical-align: top
+			color: #fff
+			margin-left: 1vw
+			font-size: 1vw
+			margin-top: 1vw
+			line-height: 1
+			text-align: left
+			border-radius: 1vw
+			padding: 1vw 1.1vw
+			cursor: pointer
+			height: 2.5vw
+			border: solid 1px transparent
+			@include transition(.3s height)
+			overflow: hidden
+			img
+				height: 1vw
+			i
+				margin-left: .5vw
+				display: inline-block
+				vertical-align: middle
+			ul
+				visibility: hidden
+				li
+					margin-top: 0.6vw
+			&.active
+				border-color: #fff
+				height: 6.5vw
+				margin-bottom: -5vw
+				ul
+					visibility: visible
+	h1
+		font-size: 6.8vw
+		font-weight: 900
+		letter-spacing: .5vw
+		text-align: center
+		margin-top: 18vh
+	.name
+		opacity: 0.8
+		font-size: 2.5vw
+		line-height: 1
+		font-weight: 300
+		letter-spacing: .4vw
+		text-align: center
+		text-transform: uppercase
+		margin-top: .2vh
+	.desc
+		opacity: 0.8
+		font-size: 2vw
+		font-weight: 300
+		line-height: 1.5
+		letter-spacing: 0.02vw
+		margin-top: 4.2vh
+		text-align: center
+	.button
+		margin-top: 6vh
+		position: relative
+		z-index: 2
