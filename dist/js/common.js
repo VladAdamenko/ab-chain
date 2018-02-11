@@ -1,22 +1,6 @@
 
 $(function() {
 
-	// var $window = $(window);
- //    var scrollTime = 1.2;
- //    var scrollDistance = 200;
-
- //    $window.on("mousewheel DOMMouseScroll", function(event){
- //        event.preventDefault(); 
- //        var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
- //        var scrollTop = $window.scrollTop();
- //        var finalScroll = scrollTop - parseInt(delta*scrollDistance);
- //        TweenMax.to($window, scrollTime, {
- //            scrollTo : { y: finalScroll, autoKill:true },
- //                ease: Power1.easeOut,
- //                overwrite: 5                          
- //            });
- //    });
-
 	$('.fancybox').fancybox();
 
 	$('.scrollTo').click(function(event) {
@@ -1863,10 +1847,12 @@ $(function() {
 	// });
 
 
-	var $preloader = $('#p_prldr'),
-	$svg_anm   = $preloader.find('.svg_anm');
-	$svg_anm.fadeOut();
-	$preloader.delay(200).fadeOut('slow');
+	var $preloader = $('#p_prldr');
+	setTimeout(function(){
+		$preloader.find('.s1,.s2,.s3').hide();
+		$preloader.find('.contpre svg').fadeOut();
+		$preloader.delay(200).fadeOut('slow');
+	}, 300);
 
 });
 
