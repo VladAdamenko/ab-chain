@@ -1,6 +1,22 @@
 
 $(function() {
 
+    var $window = $(window);
+    var scrollTime = 1.2;
+    var scrollDistance = 150;
+
+    $window.on("mousewheel DOMMouseScroll", function(event){
+        event.preventDefault(); 
+        var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+        var scrollTop = $window.scrollTop();
+        var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+        TweenMax.to($window, scrollTime, {
+            scrollTo : { y: finalScroll, autoKill:true },
+                ease: Power1.easeOut,
+                overwrite: 5                          
+            });
+    });
+
 	$('.fancybox').fancybox();
 
 	$('.scrollTo').click(function(event) {
@@ -1565,21 +1581,21 @@ $(function() {
 		        	transform: 'translate3d(0,-10.0vh,0)'
 		        }
 		    },
-		    {
-				from: 'doc-top + 100vp = top',
-		        css:{
-		        	transform: 'translate3d(0,-10.0vh,0)'
-		        }
-		    },
+		  //   {
+				// from: 'doc-top + 100vp = top',
+		  //       css:{
+		  //       	transform: 'translate3d(0,-10.0vh,0)'
+		  //       }
+		  //   },
 		]);
 
 		$('.vp .first-bg').scroolly([
-			{
-		        to: 'doc-top + 50vp = top',
-				css: {
-					opacity: 1,
-		        },
-		    },
+			// {
+		 //        to: 'doc-top + 50vp = top',
+			// 	css: {
+			// 		opacity: 1,
+		 //        },
+		 //    },
 		    {
 		        from: 'doc-top + 50vp = top',
 				to: 'doc-top + 100vp = top',
@@ -1590,12 +1606,12 @@ $(function() {
 		        	opacity: 0,
 		        }
 		    },
-		    {
-				from: 'doc-top + 100vp = top',
-		        css:{
-		        	opacity: 0,
-		        }
-		    },
+		  //   {
+				// from: 'doc-top + 100vp = top',
+		  //       css:{
+		  //       	opacity: 0,
+		  //       }
+		  //   },
 		]);
 
 		$('.vp .second-bg').scroolly([
@@ -1609,12 +1625,12 @@ $(function() {
 		        	opacity: 1,
 		        }
 		    },
-		    {
-				from: 'doc-top + 50vp = top',
-		        css:{
-		        	opacity: 1,
-		        }
-		    },
+		  //   {
+				// from: 'doc-top + 50vp = top',
+		  //       css:{
+		  //       	opacity: 1,
+		  //       }
+		  //   },
 		    {
 		        from: 'doc-top + 100vp = top',
 				to: 'doc-top + 140vp = top',
@@ -1625,79 +1641,79 @@ $(function() {
 		        	opacity: 0
 		        }
 		    },
-		    {
-				from: 'doc-top + 140vp = top',
-		        css:{
-		        	opacity: 0
-		        }
-		    },
+		  //   {
+				// from: 'doc-top + 140vp = top',
+		  //       css:{
+		  //       	opacity: 0
+		  //       }
+		  //   },
 		]);
 
-		$('.vp .third-bg').scroolly([
-		    {
-		        from: 'doc-top + 110vp = top',
-				to: 'doc-top + 160vp = top',
-				cssFrom: {
-					opacity: 0,
-		        },
-		        cssTo:{
-		        	opacity: 1,
-		        }
-		    },
-		    {
-		        from: 'doc-top + 160vp = top',
-				css: {
-					opacity: 1,
-		        },
-		    },
-		    {
-		        from: 'doc-top + 110vp = top',
-				to: 'doc-top + 210vp = top',
-				cssFrom: {
-					'background-position': 'center 20.00vh'
-		        },
-		        cssTo:{
-		        	'background-position': 'center 0.00vh'
-		        }
-		    },
-		    {
-		        from: 'doc-top + 210vp = top',
-				to: 'doc-top + 700vp = top',
-				cssFrom: {
-					'background-position': 'center -0.00vh'
-		        },
-		        cssTo:{
-		        	'background-position': 'center -120.00vh'
-		        }
-		    },
-		    {
-		        from: 'doc-top + 520vp = top',
-				to: 'doc-top + 700vp = top',
-				cssFrom: {
-					opacity: 1,
-		        },
-		        cssTo:{
-		        	opacity: 0,
-		        }
-		    },
-		    {
-				from: 'doc-top + 700vp = top',
-		        css:{
-		        	opacity: 0,
-		        }
-		    },
-		]);
+		// $('.vp .third-bg').scroolly([
+		//     {
+		//         from: 'doc-top + 110vp = top',
+		// 		to: 'doc-top + 160vp = top',
+		// 		cssFrom: {
+		// 			opacity: 0,
+		//         },
+		//         cssTo:{
+		//         	opacity: 1,
+		//         }
+		//     },
+		//   //   {
+		//   //       from: 'doc-top + 160vp = top',
+		// 		// css: {
+		// 		// 	opacity: 1,
+		//   //       },
+		//   //   },
+		//     {
+		//         from: 'doc-top + 110vp = top',
+		// 		to: 'doc-top + 210vp = top',
+		// 		cssFrom: {
+		// 			'background-position': 'center 20.00vh'
+		//         },
+		//         cssTo:{
+		//         	'background-position': 'center 0.00vh'
+		//         }
+		//     },
+		//     {
+		//         from: 'doc-top + 210vp = top',
+		// 		to: 'doc-top + 700vp = top',
+		// 		cssFrom: {
+		// 			'background-position': 'center -0.00vh'
+		//         },
+		//         cssTo:{
+		//         	'background-position': 'center -120.00vh'
+		//         }
+		//     },
+		//     {
+		//         from: 'doc-top + 520vp = top',
+		// 		to: 'doc-top + 700vp = top',
+		// 		cssFrom: {
+		// 			opacity: 1,
+		//         },
+		//         cssTo:{
+		//         	opacity: 0,
+		//         }
+		//     },
+		//   //   {
+		// 		// from: 'doc-top + 700vp = top',
+		//   //       css:{
+		//   //       	opacity: 0,
+		//   //       }
+		//   //   },
+		// ]);
 
 		$('.vp .dark-bottom').scroolly([
+		  //   {
+		  //       from: 'doc-top + 700vp = top',
+		  //       to: 'doc-top + 780vp = top',
+				// css: {
+				// 	opacity: 0,
+		  //       },
+		  //   },
 		    {
-		        from: 'doc-top + 700vp = top',
-		        to: 'doc-top + 780vp = top',
-				css: {
-					opacity: 0,
-		        },
-		    },
-		    {
-		        from: 'doc-top + 780vp = top',
+		        from: 'doc-bottom - 150vp = bottom',
 				to: 'doc-bottom = bottom',
 				cssFrom: {
 					opacity: 0,
@@ -1841,11 +1857,6 @@ $(function() {
 		// 	form.find('input:not([type="hidden"])').val('');
 		// });
 	});
-
-	// $(window).on('scroll', function() {
-	//    window.requestAnimationFrame(scrollHandler);
-	// });
-
 
 	var $preloader = $('#p_prldr');
 	setTimeout(function(){
