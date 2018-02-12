@@ -50,12 +50,13 @@ $(function() {
 		  else if (href == '#more' && $(href).hasClass('scroll-pos-after'))
 		  	pad = -90;
 		  else if (href == '#tokens' && $(href).hasClass('scroll-pos-before'))
-		  	pad = 400;
+		  	pad = 300;
 		  else if (href == '#tokens' && $(href).hasClass('scroll-pos-after'))
 		  	pad = 0;
 		} else {
 			pad = -50;
 		}
+		  history.pushState(null, 'AB-CHAIN', '/'+href);
 	  $('html, body').stop().animate({
 	    scrollTop: offsetTop + pad
 	  }, 1000);
@@ -1200,7 +1201,6 @@ $(function() {
 
 		$('#tokens').scroolly([
 			{
-				alias: 'before',
 		        to: 'el-top + 10vp = bottom',
 				css: {
 					transform: 'translate3d(0,-50.0vh,0)',
@@ -1222,6 +1222,13 @@ $(function() {
 		        css:{
 		        	transform: 'translate3d(0,0.0vh,0)',
 		        }
+		    },
+		]);
+
+		$('#tokens').scroolly([
+			{
+				alias: 'before',
+		        to: 'el-top + 50vp = bottom',
 		    },
 		]);
 
