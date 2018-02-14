@@ -46,7 +46,7 @@ gulp.task('headersass', function() {
 		.pipe(rename({suffix: '.min', prefix : ''}))
 		.pipe(autoprefixer(['last 15 versions']))
 		.pipe(cleanCSS())
-		.pipe(gulp.dest('app'))
+		.pipe(gulp.dest('app/icoLanding'))
 		.pipe(browserSync.reload({stream: true}))
 });
 
