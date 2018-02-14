@@ -19,11 +19,18 @@ $(function() {
 
 	$('.fancybox').fancybox();
 
-	$('.scrollTo').click(function(event) {
+	$('.logo').click(function(event) {
 		event.preventDefault();
 		var target = $(this).attr('href');
 		var top = $(target).offset().top;
 		$('html, body').animate({scrollTop : top+'px'}, 1000);
+	});
+
+	$('.scrollToMore').click(function(event) {
+		event.preventDefault();
+		var target = $(this).attr('href');
+		var top = $(target).offset().top;
+		$('html, body').animate({scrollTop : (top + 250)+'px'}, 1000);
 	});
 
 	var lastId,
@@ -50,7 +57,7 @@ $(function() {
 		  else if (href == '#more' && $(href).hasClass('scroll-pos-after'))
 		  	pad = -90;
 		  else if (href == '#tokens' && $(href).hasClass('scroll-pos-before'))
-		  	pad = 300;
+		  	pad = 350;
 		  else if (href == '#tokens' && $(href).hasClass('scroll-pos-after'))
 		  	pad = 0;
 		} else {
