@@ -3,7 +3,7 @@ $(function() {
 
     var $window = $(window);
     var scrollTime = 1.2;
-    var scrollDistance = 120;
+    var scrollDistance = 180;
 
     $window.on("mousewheel DOMMouseScroll", function(event){
         event.preventDefault(); 
@@ -16,6 +16,18 @@ $(function() {
                 overwrite: 5                          
             });
     });
+
+    window.addEventListener("DOMContentLoaded", scrollLoop, false);
+	 
+	var xScrollPosition;
+	var yScrollPosition;
+	 
+	function scrollLoop() {
+	    xScrollPosition = window.scrollX;
+	    yScrollPosition = window.scrollY;
+	 
+	    requestAnimationFrame(scrollLoop);
+	}
 
 	$('.fancybox').fancybox();
 
