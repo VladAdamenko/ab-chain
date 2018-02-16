@@ -36,11 +36,11 @@ $(function() {
 	});
 
 	$('.fancybox').fancybox({
-		beforeLoad: function() {
-			if ($(document).width() <= 767) {
-				window.scrollTo(0, 0);
-			}
-		}
+		// beforeLoad: function() {
+		// 	if ($(document).width() <= 767) {
+		// 		window.scrollTo(0, 0);
+		// 	}
+		// }
 	});
 
 
