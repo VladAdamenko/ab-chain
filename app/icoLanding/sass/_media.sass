@@ -1,6 +1,14 @@
 @import "bourbon"
 @import "vars"
 
+
+@media only screen and (max-width : 1200px)
+	.video .wrap-iframe .video-play
+		display: none
+	.video .wrap-iframe iframe
+		display: block
+
+
 // /* Large Devices, Wide Screens */
 @media only screen and (max-width : 768px)
 	.contpre
@@ -462,10 +470,6 @@
 		padding: 0 4vw
 		li
 			padding: 0
-	.video .wrap-iframe .video-play
-		display: none
-	.video .wrap-iframe iframe
-		display: block
 	.roadmap .map a.el-6,
 	.roadmap .map a.el-6 + p
 		float: left
