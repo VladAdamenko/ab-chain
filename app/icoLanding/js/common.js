@@ -29,7 +29,20 @@ $(function() {
 	    requestAnimationFrame(scrollLoop);
 	}
 
-	$('.fancybox').fancybox();
+	$('.video-play').click(function(event) {
+		event.preventDefault();
+		$(this).hide();
+		$(this).next().fadeIn();
+	});
+
+	$('.fancybox').fancybox({
+		beforeLoad: function() {
+			if ($(document).width() <= 767) {
+				window.scrollTo(0, 0);
+			}
+		}
+	});
+
 
 	$('.logo').click(function(event) {
 		event.preventDefault();
@@ -60,26 +73,28 @@ $(function() {
 	// Bind click handler to menu items
 	// so we can get a fancy scroll animation
 	menuItems.click(function(e) {
-	  var href = $(this).attr("href"),
-	    offsetTop = href === "#" ? 0 : $(href).offset().top + 1;
-	    var pad = 0;
-	  if ($(document).width() > 767) {
-		  if (href == '#more' && $(href).hasClass('scroll-pos-before'))
-		  	pad = 300;
-		  else if (href == '#more' && $(href).hasClass('scroll-pos-after'))
-		  	pad = -90;
-		  else if (href == '#tokens' && $(href).hasClass('scroll-pos-before'))
-		  	pad = 350;
-		  else if (href == '#tokens' && $(href).hasClass('scroll-pos-after'))
-		  	pad = 0;
-		} else {
-			pad = -50;
-		}
-		  history.pushState(null, 'AB-CHAIN', '/'+href);
-	  $('html, body').stop().animate({
-	    scrollTop: offsetTop + pad
-	  }, 1000);
-	  e.preventDefault();
+    var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top + 1;
+      var pad = 0;
+	  if (href.substring(0, 1) == '#') {
+  	  if ($(document).width() > 767) {
+  		  if (href == '#more' && $(href).hasClass('scroll-pos-before'))
+  		  	pad = 300;
+  		  else if (href == '#more' && $(href).hasClass('scroll-pos-after'))
+  		  	pad = -90;
+  		  else if (href == '#tokens' && $(href).hasClass('scroll-pos-before'))
+  		  	pad = 350;
+  		  else if (href == '#tokens' && $(href).hasClass('scroll-pos-after'))
+  		  	pad = 0;
+  		} else {
+  			pad = -50;
+  		}
+  		  history.pushState(null, 'AB-CHAIN', '/'+href);
+  	  $('html, body').stop().animate({
+  	    scrollTop: offsetTop + pad
+  	  }, 1000);
+  	  e.preventDefault();
+    }
 	});
 
 	// Bind to scroll
@@ -208,7 +223,6 @@ $(function() {
 	});
 
 	$('.main .menu li a').click(function(event) {
-		event.preventDefault();
 		var menu = $('.main .wrap-menu');
 		if (menu.hasClass('collapsed') && !$(this).hasClass('active'))
 			menu.removeClass('opened');
@@ -1607,21 +1621,21 @@ $(function() {
 		        	transform: 'translate3d(0,-10.0vh,0)'
 		        }
 		    },
-		  //   {
-				// from: 'doc-top + 100vp = top',
-		  //       css:{
-		  //       	transform: 'translate3d(0,-10.0vh,0)'
-		  //       }
-		  //   },
+		    {
+				from: 'doc-top + 100vp = top',
+		        css:{
+		        	transform: 'translate3d(0,-10.0vh,0)'
+		        }
+		    },
 		]);
 
 		$('.vp .first-bg').scroolly([
-			// {
-		 //        to: 'doc-top + 50vp = top',
-			// 	css: {
-			// 		opacity: 1,
-		 //        },
-		 //    },
+			{
+		        to: 'doc-top + 50vp = top',
+				css: {
+					opacity: 1,
+		        },
+		    },
 		    {
 		        from: 'doc-top + 50vp = top',
 				to: 'doc-top + 100vp = top',
@@ -1632,12 +1646,12 @@ $(function() {
 		        	opacity: 0,
 		        }
 		    },
-		  //   {
-				// from: 'doc-top + 100vp = top',
-		  //       css:{
-		  //       	opacity: 0,
-		  //       }
-		  //   },
+		    {
+				from: 'doc-top + 100vp = top',
+		        css:{
+		        	opacity: 0,
+		        }
+		    },
 		]);
 
 		$('.vp .second-bg').scroolly([
@@ -1651,12 +1665,12 @@ $(function() {
 		        	opacity: 1,
 		        }
 		    },
-		  //   {
-				// from: 'doc-top + 50vp = top',
-		  //       css:{
-		  //       	opacity: 1,
-		  //       }
-		  //   },
+		    {
+				from: 'doc-top + 50vp = top',
+		        css:{
+		        	opacity: 1,
+		        }
+		    },
 		    {
 		        from: 'doc-top + 100vp = top',
 				to: 'doc-top + 140vp = top',
@@ -1667,12 +1681,12 @@ $(function() {
 		        	opacity: 0
 		        }
 		    },
-		  //   {
-				// from: 'doc-top + 140vp = top',
-		  //       css:{
-		  //       	opacity: 0
-		  //       }
-		  //   },
+		    {
+				from: 'doc-top + 140vp = top',
+		        css:{
+		        	opacity: 0
+		        }
+		    },
 		]);
 
 		// $('.vp .third-bg').scroolly([
@@ -1874,14 +1888,17 @@ $(function() {
 	$("form").submit(function() {
 		event.preventDefault();
 		var form = $(this);
-		thanks(form);
-		// $.ajax({
-		// 	type: "POST",
-		// 	url: "/",
-		// 	data: form.serialize()
-		// }).done(function() {
-		// 	form.find('input:not([type="hidden"])').val('');
-		// });
+		$.ajax({
+			type: "POST",
+			url: form.attr('action'),
+			data: form.serialize(),
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		}).done(function() {
+			form.find('input:not([type="hidden"])').val('');
+			thanks(form);
+		});
 	});
 
 	var $preloader = $('#p_prldr');

@@ -91,8 +91,10 @@
 			position: absolute
 			z-index: -1
 		.name
-			font-size: 2vw
+			position: relative
+			font-size: 1.5vw
 			font-weight: bold
+			z-index: 1
 		.el-1
 			width: 10vw
 			top: 9vw
@@ -349,11 +351,31 @@
 	padding: 20vh 0
 	text-align: center
 	position: relative
-	iframe
+	.wrap-iframe
 		height: 70vh
 		width: 70vw
 		position: relative
-		z-index: 1
+		z-index: 2
+		display: inline-block
+		iframe
+			width: 100%
+			height: 100%
+			display: none
+		.video-play
+			display: block
+			position: relative
+			height: 100%
+			img
+				width: 100%
+				height: 100%
+			svg
+				position: absolute
+				top: 50%
+				left: 50%
+				width: 8vw
+				margin: -4vw
+				height: auto
+				color: #fff
 	&:after
 		content: ''
 		display: block
@@ -612,14 +634,14 @@
 			padding: 7.5vh 4.5vw
 			.color
 				background-image: linear-gradient(to left, #ffc2e6, #b73475)
-				font-size: 1.9vw
+				font-size: 1.5vw
 				font-weight: 900
 				line-height: 1.33
 				-webkit-background-clip: text
 				background-clip: text
 				-webkit-text-fill-color: transparent
 			p
-				font-size: 1.6vw
+				font-size: 1.3vw
 				font-weight: 300
 				opacity: .9
 				line-height: 1.6
@@ -672,7 +694,7 @@
 			font-weight: 300
 			opacity: .8
 		b
-			font-size: 2vw
+			font-size: 1.5vw
 			font-weight: 900
 		p
 			margin: .8vh 0
@@ -792,5 +814,16 @@
 			opacity: .9
 			margin: 3vh 0
 
+.rus
+	.more .wrap-img .block .blue,
+	.more .wrap-img .block .pink
+		font-size: 2.5vw
+	.more .wrap-img .block
+		font-size: 1.1vw
+	.tokens .content .sign
+		font-size: 1vw
+	.key .header
+		font-size: 3.4vw
+		line-height: 1.4
 
 @import "media"

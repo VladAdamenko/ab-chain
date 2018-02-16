@@ -52,8 +52,8 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 	<!-- Custom Browsers Color End -->
-	<link href="https://use.fontawesome.com/releases/v5.0.6//icoLanding/css/all.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css" rel="stylesheet">
+	<link href="/icoLanding/css/jquery.fullPage.css" rel="stylesheet">
+	<script defer src="/icoLanding/js/fontawesome-all.min.js"></script>
 </head>
 
 <body id="body">
@@ -311,7 +311,13 @@
 
 		<section class="video" id="video">
 			<div class="container-fluid">
-				<iframe src="https://www.youtube.com/embed/9ojO_E5sO_o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="wrap-iframe">
+					<a href="#" class="video-play">
+						<img src="img/others/video.jpg">
+						<i class="fas fa-play"></i>
+					</a>
+					<iframe src="https://www.youtube.com/embed/9ojO_E5sO_o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
 			</div>
 			<div class="line"></div>
 		</section>
@@ -870,8 +876,8 @@
 		<!-- Optimized loading JS Start -->
 		<script>var scr = {"scripts":[
 			{"src" : "/icoLanding/js/libs.min.js", "async" : false},
-			{"src" : "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js", "async" : false},
-			{"src" : "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js", "async" : false},
+			{"src" : "/icoLanding/js/TweenMax.min.js", "async" : false},
+			{"src" : "/icoLanding/js/ScrollToPlugin.min.js", "async" : false},
 			{"src" : "/icoLanding/js/common.js", "async" : false}
 			]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
 		</script>
