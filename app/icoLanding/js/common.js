@@ -33,6 +33,10 @@ $(function() {
 		event.preventDefault();
 		$(this).hide();
 		$(this).next().fadeIn();
+		var $video = $('#videoIframe'),
+		src = $video.attr('src');
+	 
+		$video.attr('src', src + '&autoplay=1');
 	});
 
 	$('.fancybox').fancybox({
