@@ -555,13 +555,13 @@ $(function() {
 
 		$('#genius h2').scroolly([
 			{
-				to: 'con-bottom - 15vp = bottom',
+				to: 'con-bottom - 17vp = bottom',
 				css: {
 		            opacity: 0,
 		        },
 		    },
 		    {
-		        from: 'con-bottom - 15vp = bottom',
+		        from: 'con-bottom - 17vp = bottom',
 				to: 'con-bottom - 13vp = bottom',
 				cssFrom: {
 		            opacity: 0,
@@ -605,14 +605,14 @@ $(function() {
 
 		$('#genius .text-1, #genius .text-4').scroolly([
 		    {
-				to: 'con-bottom - 15vp = bottom',
+				to: 'con-bottom - 17vp = bottom',
 				css: {
 					top: '12.00vh',
 		            opacity: 0,
 		        }
 		    },
 		    {
-		        from: 'con-bottom - 15vp = bottom',
+		        from: 'con-bottom - 17vp = bottom',
 				to: 'con-bottom - 12vp = bottom',
 				cssFrom: {
 					top: '12.00vh',
